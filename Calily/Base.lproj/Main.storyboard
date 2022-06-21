@@ -1,24 +1,465 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HoengseongHanu.ttf">
+            <string>Hoengseong-Hanu</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--CalcVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CalcVC" customModule="Calily" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeO-8S-n11">
+                                <rect key="frame" x="30" y="179" width="354" height="88"/>
+                                <fontDescription key="fontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="NkO-Tz-sN6">
+                                <rect key="frame" x="31.5" y="322" width="351" height="459"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="GfE-XL-btw">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBi-ch-aNP">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="lRP-9D-3Zc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="AC" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="30"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchClearBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4t6-Rx-v7c"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-Am-hs8">
+                                                <rect key="frame" x="92" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="+/-" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="30"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-wj-1SA">
+                                                <rect key="frame" x="184" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="%" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t0-V1-5I4">
+                                                <rect key="frame" x="276" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="÷" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchOperatorBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U3D-tV-2oz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="8ie-Am-hs8" firstAttribute="height" secondItem="jBi-ch-aNP" secondAttribute="height" id="OXr-QQ-wOB"/>
+                                            <constraint firstItem="5t0-V1-5I4" firstAttribute="height" secondItem="jBi-ch-aNP" secondAttribute="height" id="eEX-QQ-8hI"/>
+                                            <constraint firstItem="9H3-wj-1SA" firstAttribute="height" secondItem="jBi-ch-aNP" secondAttribute="height" id="zce-Pu-kvI"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="iov-cQ-joy">
+                                        <rect key="frame" x="0.0" y="96" width="351" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QRD-QT-acy">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="QOP-6X-665"/>
+                                                    <constraint firstAttribute="width" constant="75" id="inm-5j-SDt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="7" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bp8-2O-ZYq"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPw-e0-MGc">
+                                                <rect key="frame" x="92" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="8" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="avS-n2-xXI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygf-sf-bzc">
+                                                <rect key="frame" x="184" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="9" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Qk-ty-zeR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McM-kb-MwF">
+                                                <rect key="frame" x="276" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="x" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchOperatorBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0OD-4Z-zov"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ygf-sf-bzc" firstAttribute="height" secondItem="QRD-QT-acy" secondAttribute="height" id="CX6-4g-WlV"/>
+                                            <constraint firstItem="dPw-e0-MGc" firstAttribute="height" secondItem="QRD-QT-acy" secondAttribute="height" id="CvY-Hb-lA6"/>
+                                            <constraint firstItem="McM-kb-MwF" firstAttribute="height" secondItem="QRD-QT-acy" secondAttribute="height" id="ibE-zv-2sr"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-6J-M7u">
+                                        <rect key="frame" x="0.0" y="192" width="351" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ8-ZL-FMZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="KfP-cD-6YM"/>
+                                                    <constraint firstAttribute="width" constant="75" id="kIA-BV-I3W"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="4" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JmU-Nl-S9r"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rp2-vL-JR5">
+                                                <rect key="frame" x="92" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="5" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1f6-kj-gI7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRm-Fm-aEu">
+                                                <rect key="frame" x="184" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="6" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZIT-0M-rH3"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUh-f7-MOb">
+                                                <rect key="frame" x="276" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="-" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchOperatorBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xfh-fs-cHV"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="OUh-f7-MOb" firstAttribute="height" secondItem="JJ8-ZL-FMZ" secondAttribute="height" id="2xt-Iu-7Qn"/>
+                                            <constraint firstItem="nRm-Fm-aEu" firstAttribute="height" secondItem="JJ8-ZL-FMZ" secondAttribute="height" id="EP1-6F-Wgu"/>
+                                            <constraint firstItem="rp2-vL-JR5" firstAttribute="height" secondItem="JJ8-ZL-FMZ" secondAttribute="height" id="Q4S-Lh-NvX"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="3ZP-Sf-RNc">
+                                        <rect key="frame" x="0.0" y="288" width="351" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dto-wL-bMV">
+                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="4aG-tZ-OvQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="1" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="in4-LB-9i2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4di-1A-ISf">
+                                                <rect key="frame" x="92" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="2" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1pD-ee-zWi"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSk-C8-mlr">
+                                                <rect key="frame" x="184" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="3" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="syB-Vy-9fz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8A-t2-BH7">
+                                                <rect key="frame" x="276" y="0.0" width="75" height="75"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="+" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchOperatorBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AFv-Ia-Sd8"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="nSk-C8-mlr" firstAttribute="width" secondItem="Dto-wL-bMV" secondAttribute="width" id="9ox-tc-aLG"/>
+                                            <constraint firstItem="nSk-C8-mlr" firstAttribute="height" secondItem="Dto-wL-bMV" secondAttribute="height" id="Z1N-gb-Tac"/>
+                                            <constraint firstItem="N8A-t2-BH7" firstAttribute="height" secondItem="Dto-wL-bMV" secondAttribute="height" id="chZ-c7-ekk"/>
+                                            <constraint firstItem="4di-1A-ISf" firstAttribute="width" secondItem="Dto-wL-bMV" secondAttribute="width" id="djZ-Ma-aUQ"/>
+                                            <constraint firstItem="4di-1A-ISf" firstAttribute="height" secondItem="Dto-wL-bMV" secondAttribute="height" id="yYi-Bp-okM"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="IHa-qZ-3Kw">
+                                        <rect key="frame" x="0.0" y="384" width="351" height="75"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swV-dO-abY">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="swV-dO-abY" secondAttribute="height" multiplier="2.2:1" id="ts0-cO-2T6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="0" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchNumberBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hlt-4q-Cc1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRg-sr-Klv">
+                                                <rect key="frame" x="182" y="0.0" width="76" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="8hl-pv-eze"/>
+                                                    <constraint firstAttribute="width" secondItem="pRg-sr-Klv" secondAttribute="height" multiplier="1:1" constant="1" id="zzj-5S-TO7"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="." cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vH6-72-BLK">
+                                                <rect key="frame" x="275" y="0.0" width="76" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="rsb-UE-wWX"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                                <color key="tintColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="AC">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="tinted" title="=" cornerStyle="capsule">
+                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="baseBackgroundColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchResultBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t2T-sS-7Px"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="swV-dO-abY" firstAttribute="leading" secondItem="IHa-qZ-3Kw" secondAttribute="leading" id="79q-dp-Fmo"/>
+                                            <constraint firstAttribute="bottom" secondItem="pRg-sr-Klv" secondAttribute="bottom" id="GwT-zx-VxE"/>
+                                            <constraint firstItem="pRg-sr-Klv" firstAttribute="height" secondItem="swV-dO-abY" secondAttribute="height" id="N48-pP-8hl"/>
+                                            <constraint firstAttribute="bottom" secondItem="vH6-72-BLK" secondAttribute="bottom" id="SxZ-f1-L35"/>
+                                            <constraint firstItem="pRg-sr-Klv" firstAttribute="top" secondItem="IHa-qZ-3Kw" secondAttribute="top" id="TBc-xd-Xeb"/>
+                                            <constraint firstItem="vH6-72-BLK" firstAttribute="top" secondItem="IHa-qZ-3Kw" secondAttribute="top" id="ZnE-zK-7gB"/>
+                                            <constraint firstItem="vH6-72-BLK" firstAttribute="height" secondItem="pRg-sr-Klv" secondAttribute="height" id="dRt-xt-9KK"/>
+                                            <constraint firstAttribute="bottom" secondItem="swV-dO-abY" secondAttribute="bottom" id="l8s-SJ-USx"/>
+                                            <constraint firstItem="vH6-72-BLK" firstAttribute="leading" secondItem="pRg-sr-Klv" secondAttribute="trailing" constant="17" id="lxe-EN-EZ1"/>
+                                            <constraint firstItem="vH6-72-BLK" firstAttribute="height" secondItem="pRg-sr-Klv" secondAttribute="height" id="mc9-1a-QUk"/>
+                                            <constraint firstItem="vH6-72-BLK" firstAttribute="width" secondItem="pRg-sr-Klv" secondAttribute="width" id="rKy-UN-t1n"/>
+                                            <constraint firstItem="swV-dO-abY" firstAttribute="top" secondItem="IHa-qZ-3Kw" secondAttribute="top" id="skK-s4-TBV"/>
+                                            <constraint firstAttribute="trailing" secondItem="vH6-72-BLK" secondAttribute="trailing" id="uJZ-Jd-Odk"/>
+                                            <constraint firstItem="pRg-sr-Klv" firstAttribute="leading" secondItem="swV-dO-abY" secondAttribute="trailing" constant="17" id="x3e-n2-9n6"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eeO-8S-n11" secondAttribute="trailing" constant="30" id="CWM-I8-SuP"/>
+                            <constraint firstItem="eeO-8S-n11" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Qdm-TE-2i5"/>
+                            <constraint firstItem="NkO-Tz-sN6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R4A-ZQ-NrN"/>
+                            <constraint firstItem="eeO-8S-n11" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="135" id="TBs-xa-nVM"/>
+                            <constraint firstItem="NkO-Tz-sN6" firstAttribute="top" secondItem="eeO-8S-n11" secondAttribute="bottom" constant="55" id="pus-YA-yRF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="acBtn" destination="jBi-ch-aNP" id="dui-YW-btR"/>
+                        <outlet property="divisionBtn" destination="5t0-V1-5I4" id="MI5-gF-dOp"/>
+                        <outlet property="dotBtn" destination="pRg-sr-Klv" id="XPd-yd-aku"/>
+                        <outlet property="minusBtn" destination="OUh-f7-MOb" id="Zkc-1f-zeu"/>
+                        <outlet property="multiBtn" destination="McM-kb-MwF" id="ort-r8-Nmo"/>
+                        <outlet property="percentBtn" destination="9H3-wj-1SA" id="S7Y-iq-QCm"/>
+                        <outlet property="plusBtn" destination="N8A-t2-BH7" id="cib-XT-bTh"/>
+                        <outlet property="resultBtn" destination="vH6-72-BLK" id="aER-uo-GB6"/>
+                        <outlet property="resultLabel" destination="eeO-8S-n11" id="cVU-fJ-W25"/>
+                        <outlet property="reversePlusMinusBtn" destination="8ie-Am-hs8" id="K6S-Yq-MPn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
