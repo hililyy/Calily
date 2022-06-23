@@ -30,9 +30,7 @@ class CalcVC: UIViewController {
     }
 
     @IBAction func touchNumberBtn(_ sender: Any) {
-        
     }
-    
     
     @IBAction func touchOperatorBtn(_ sender: Any) {
     }
@@ -41,7 +39,7 @@ class CalcVC: UIViewController {
     }
     
     @IBAction func touchClearBtn(_ sender: Any) {
-        
+        resultLabel.text = "0"
     }
+    
 }
-
