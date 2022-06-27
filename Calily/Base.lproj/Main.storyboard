@@ -33,7 +33,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="351" height="75"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBi-ch-aNP">
-                                                <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="259" height="75"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="lRP-9D-3Zc"/>
                                                 </constraints>
@@ -52,36 +52,11 @@
                                                     <action selector="touchClearBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4t6-Rx-v7c"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-Am-hs8">
-                                                <rect key="frame" x="92" y="0.0" width="75" height="75"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                                <color key="tintColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="AC">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <buttonConfiguration key="configuration" style="tinted" title="+/-" cornerStyle="capsule">
-                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="30"/>
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="baseBackgroundColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9H3-wj-1SA">
-                                                <rect key="frame" x="184" y="0.0" width="75" height="75"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
-                                                <color key="tintColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="AC">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </state>
-                                                <buttonConfiguration key="configuration" style="tinted" title="%" cornerStyle="capsule">
-                                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="32"/>
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="baseBackgroundColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </buttonConfiguration>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5t0-V1-5I4">
                                                 <rect key="frame" x="276" y="0.0" width="75" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="5t0-V1-5I4" secondAttribute="height" multiplier="1:1" id="mZp-A0-Bx3"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
                                                 <color key="tintColor" red="0.13198468089103699" green="0.026724839583039284" blue="0.98118525743484497" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -99,9 +74,7 @@
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="8ie-Am-hs8" firstAttribute="height" secondItem="jBi-ch-aNP" secondAttribute="height" id="OXr-QQ-wOB"/>
                                             <constraint firstItem="5t0-V1-5I4" firstAttribute="height" secondItem="jBi-ch-aNP" secondAttribute="height" id="eEX-QQ-8hI"/>
-                                            <constraint firstItem="9H3-wj-1SA" firstAttribute="height" secondItem="jBi-ch-aNP" secondAttribute="height" id="zce-Pu-kvI"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="17" translatesAutoresizingMaskIntoConstraints="NO" id="iov-cQ-joy">
@@ -391,6 +364,9 @@
                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="touchDotBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yww-Ec-HWb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vH6-72-BLK">
                                                 <rect key="frame" x="275" y="0.0" width="76" height="75"/>
@@ -449,11 +425,9 @@
                         <outlet property="dotBtn" destination="pRg-sr-Klv" id="XPd-yd-aku"/>
                         <outlet property="minusBtn" destination="OUh-f7-MOb" id="Zkc-1f-zeu"/>
                         <outlet property="multiBtn" destination="McM-kb-MwF" id="ort-r8-Nmo"/>
-                        <outlet property="percentBtn" destination="9H3-wj-1SA" id="S7Y-iq-QCm"/>
                         <outlet property="plusBtn" destination="N8A-t2-BH7" id="cib-XT-bTh"/>
                         <outlet property="resultBtn" destination="vH6-72-BLK" id="aER-uo-GB6"/>
                         <outlet property="resultLabel" destination="eeO-8S-n11" id="cVU-fJ-W25"/>
-                        <outlet property="reversePlusMinusBtn" destination="8ie-Am-hs8" id="K6S-Yq-MPn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

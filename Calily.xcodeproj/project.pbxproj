@@ -17,6 +17,10 @@
 		2A1420BF28621FA4000ED274 /* CalcVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1420BE28621FA4000ED274 /* CalcVC.swift */; };
 		2A1420C128622033000ED274 /* CalcViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1420C028622033000ED274 /* CalcViewModel.swift */; };
 		2A1420C32862203D000ED274 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1420C22862203D000ED274 /* CalcModel.swift */; };
+		2A6565DF286986210012BD32 /* CalcEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6565DE286986210012BD32 /* CalcEntity.swift */; };
+		2A6565E1286986330012BD32 /* LocalDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6565E0286986330012BD32 /* LocalDataStore.swift */; };
+		2A6565E32869879B0012BD32 /* LocalDataKeySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6565E22869879B0012BD32 /* LocalDataKeySet.swift */; };
+		2A6565E528698ADC0012BD32 /* CalcFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6565E428698ADC0012BD32 /* CalcFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		2A1420BE28621FA4000ED274 /* CalcVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcVC.swift; sourceTree = "<group>"; };
 		2A1420C028622033000ED274 /* CalcViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcViewModel.swift; sourceTree = "<group>"; };
 		2A1420C22862203D000ED274 /* CalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcModel.swift; sourceTree = "<group>"; };
+		2A6565DE286986210012BD32 /* CalcEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcEntity.swift; sourceTree = "<group>"; };
+		2A6565E0286986330012BD32 /* LocalDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataStore.swift; sourceTree = "<group>"; };
+		2A6565E22869879B0012BD32 /* LocalDataKeySet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataKeySet.swift; sourceTree = "<group>"; };
+		2A6565E428698ADC0012BD32 /* CalcFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +99,8 @@
 		2A1420BA28621F4B000ED274 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				2A6565E0286986330012BD32 /* LocalDataStore.swift */,
+				2A6565E22869879B0012BD32 /* LocalDataKeySet.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -114,7 +124,9 @@
 		2A1420BD28621F5D000ED274 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2A6565DE286986210012BD32 /* CalcEntity.swift */,
 				2A1420C22862203D000ED274 /* CalcModel.swift */,
+				2A6565E428698ADC0012BD32 /* CalcFunction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,10 +204,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A6565DF286986210012BD32 /* CalcEntity.swift in Sources */,
 				2A14209828619BFD000ED274 /* AppDelegate.swift in Sources */,
+				2A6565E32869879B0012BD32 /* LocalDataKeySet.swift in Sources */,
 				2A1420C128622033000ED274 /* CalcViewModel.swift in Sources */,
 				2A14209A28619BFD000ED274 /* SceneDelegate.swift in Sources */,
 				2A1420BF28621FA4000ED274 /* CalcVC.swift in Sources */,
+				2A6565E528698ADC0012BD32 /* CalcFunction.swift in Sources */,
+				2A6565E1286986330012BD32 /* LocalDataStore.swift in Sources */,
 				2A1420C32862203D000ED274 /* CalcModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class CalcModel {
+    let calcModel = CalcModel()
+    var beforeCalcList: [CalcEntity] = []
+    
+    private init() {}
+}
+
+
