@@ -140,9 +140,7 @@ extension CalcModel: CalcData {
         return ""
     }
     
-    func setResultBtnData() -> String {
-         self.operation(self.currentOpertaion)
-        let result = self.result
-        return result
+    func setResultBtnData() {
+        self.operation(self.currentOpertaion)
     }
 }

@@ -24,5 +24,5 @@ protocol StorageData {
 protocol CalcData {
     func setNumberBtnData(sender: UIButton) -> String
     func setDotBtnData() -> String
-    func setResultBtnData() -> String
+    func setResultBtnData()
 }
