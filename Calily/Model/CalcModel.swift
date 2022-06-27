@@ -35,6 +35,4 @@ extension CalcModel: StorageData {
         beforeCalcList = []
         LocalDataStore.localDataStore.setData(newData: beforeCalcList)
     }
-    
-
 }
