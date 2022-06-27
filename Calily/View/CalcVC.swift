@@ -6,13 +6,6 @@
 //
 
 import UIKit
-enum Operation {
-    case Plus
-    case Minus
-    case Divide
-    case Multi
-    case unknown
-}
 
 class CalcVC: UIViewController {
 
@@ -27,121 +20,60 @@ class CalcVC: UIViewController {
     @IBOutlet weak var beforeCalcTableView: UITableView!
     @IBOutlet weak var beforeCalcAllDeleteBtn: UIButton!
     
-    var operatorFlag: Bool = false
-    var displayNumber = ""
-    var firstOperand = ""
-    var secondOperand = ""
-    var result = ""
-    var formula = ""
-    var currentOpertaion: Operation = .unknown
-    let calcModel = CalcModel.calcModel
+
+    let model = CalcModel.model
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resultLabel.text = "0"
+        initialize()
+    }
+    
+    func initialize() {
         beforeCalcTableView.delegate = self
         beforeCalcTableView.dataSource = self
-        calcModel.getBeforeCalc()
+        resultLabel.text = "0"
+        model.getBeforeCalc()
     }
 
     @IBAction func touchNumberBtn(_ sender: UIButton) {
-        guard let numberValue = sender.titleLabel?.text else { return }
-        if self.displayNumber.count < 9 {
-            self.displayNumber += numberValue
-            self.resultLabel.text = self.displayNumber
-        }
+        self.resultLabel.text =  model.setNumberBtnData(sender: sender)
     }
     
     @IBAction func touchOperatorBtn(_ sender: UIButton) {
         switch sender {
         case self.divisionBtn:
-            self.operation(.Divide)
+            model.operation(.Divide)
         case self.multiBtn:
-            self.operation(.Multi)
+            model.operation(.Multi)
         case self.minusBtn:
-            self.operation(.Minus)
+            model.operation(.Minus)
         case self.plusBtn:
-            self.operation(.Plus)
+            model.operation(.Plus)
         default:
             break
         }
     }
     
     @IBAction func touchDotBtn(_ sender: Any) {
-        if self.displayNumber.count < 8 , !self.displayNumber.contains(".") {
-            self.displayNumber += self.displayNumber.isEmpty ? "0." : "."
-            self.resultLabel.text = self.displayNumber
-        }
+        self.resultLabel.text = model.setDotBtnData()
     }
     
     @IBAction func touchResultBtn(_ sender: Any) {
-        self.operation(self.currentOpertaion)
+        model.setResultBtnData()
+        resultLabel.text = model.result
         beforeCalcTableView.reloadData()
     }
     
     @IBAction func touchClearBtn(_ sender: Any) {
         resultLabel.text = "0"
-        self.displayNumber = ""
-        self.firstOperand = ""
-        self.secondOperand = ""
-        self.result = ""
-        self.currentOpertaion = .unknown
+        model.dataInitialize()
     }
     
     @IBAction func deleteBeforeCalc(_ sender: Any) {
-        calcModel.deleteBeforeCalc()
+        model.deleteBeforeCalc()
         beforeCalcTableView.reloadData()
     }
-    func operation(_ operation: Operation) {
-        if self.currentOpertaion != .unknown {
-            if !self.displayNumber.isEmpty {
-                self.secondOperand = self.displayNumber
-                self.displayNumber = ""
-                
-                guard let firstOperand = Double(self.firstOperand) else { return }
-                guard let secondOperand = Double(self.secondOperand) else { return }
-                var firstOperandData = firstOperand.truncatingRemainder(dividingBy: 1.0) == 0 ? 1 : 0 // true: int, flase: double
-                var secondOperandData = secondOperand.truncatingRemainder(dividingBy: 1.0) == 0 ? 1 : 0
-                
-                if firstOperandData == 1 {
-                    firstOperandData = Int(firstOperand)
-                }
-                if secondOperandData == 1 {
-                    secondOperandData = Int(secondOperand)
-                }
-                switch self.currentOpertaion {
-                case .Plus:
-                    self.result = "\(firstOperand + secondOperand)"
-                    formula = "\(firstOperandData) + \(secondOperandData)"
-                case .Minus:
-                    self.result = "\(firstOperand - secondOperand) "
-                    formula = "\(firstOperandData) - \(secondOperandData)"
-                case .Divide:
-                    self.result = "\(firstOperand / secondOperand)"
-                    formula = "\(firstOperandData) / \(secondOperandData)"
-                case .Multi:
-                    self.result = "\(firstOperand * secondOperand)"
-                    formula = "\(firstOperandData) * \(secondOperandData)"
-                default:
-                    break
-                }
-                
-                if let result = Double(self.result), result.truncatingRemainder(dividingBy: 1) == 0 {
-                    self.result = "\(Int(result))"
-                }
-                
-                calcModel.setBeforeCalc(formula: formula, result: result)
-                
-                self.firstOperand = self.result
-                self.resultLabel.text = self.result
-            }
-            self.currentOpertaion = operation
-        } else {
-            self.firstOperand = self.displayNumber
-            self.currentOpertaion = operation
-            self.displayNumber = ""
-        }
-    }
+
 }
 
 extension CalcVC: UITableViewDelegate, UITableViewDataSource {
@@ -150,12 +82,12 @@ extension CalcVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return calcModel.beforeCalcList.count
+        return model.beforeCalcList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = beforeCalcTableView.dequeueReusableCell(withIdentifier: "beforeCalcCell", for: indexPath) as! BeforeCalcTableViewCell
-        cell.cellText.text = "\(calcModel.beforeCalcList[indexPath.row].formula) = \(calcModel.beforeCalcList[indexPath.row].result)"
+        cell.cellText.text = "\(model.beforeCalcList[indexPath.row].formula) = \(model.beforeCalcList[indexPath.row].result)"
         return cell
     }
 }

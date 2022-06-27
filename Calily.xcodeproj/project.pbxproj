@@ -22,6 +22,7 @@
 		2A6565E32869879B0012BD32 /* LocalDataKeySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6565E22869879B0012BD32 /* LocalDataKeySet.swift */; };
 		2A6565E528698ADC0012BD32 /* CalcFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6565E428698ADC0012BD32 /* CalcFunction.swift */; };
 		2A6565E72869CE160012BD32 /* BeforeCalcTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6565E62869CE160012BD32 /* BeforeCalcTableViewCell.swift */; };
+		2A6565E92869DADF0012BD32 /* CalculateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6565E82869DADF0012BD32 /* CalculateList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		2A6565E22869879B0012BD32 /* LocalDataKeySet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataKeySet.swift; sourceTree = "<group>"; };
 		2A6565E428698ADC0012BD32 /* CalcFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcFunction.swift; sourceTree = "<group>"; };
 		2A6565E62869CE160012BD32 /* BeforeCalcTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeCalcTableViewCell.swift; sourceTree = "<group>"; };
+		2A6565E82869DADF0012BD32 /* CalculateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2A1420BE28621FA4000ED274 /* CalcVC.swift */,
+				2A6565E82869DADF0012BD32 /* CalculateList.swift */,
 				2A6565E62869CE160012BD32 /* BeforeCalcTableViewCell.swift */,
 			);
 			path = View;
@@ -215,6 +218,7 @@
 				2A6565E72869CE160012BD32 /* BeforeCalcTableViewCell.swift in Sources */,
 				2A1420BF28621FA4000ED274 /* CalcVC.swift in Sources */,
 				2A6565E528698ADC0012BD32 /* CalcFunction.swift in Sources */,
+				2A6565E92869DADF0012BD32 /* CalculateList.swift in Sources */,
 				2A6565E1286986330012BD32 /* LocalDataStore.swift in Sources */,
 				2A1420C32862203D000ED274 /* CalcModel.swift in Sources */,
 			);
