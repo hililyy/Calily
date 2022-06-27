@@ -19,9 +19,8 @@ class CalcVC: UIViewController {
     @IBOutlet weak var dotBtn: UIButton!
     @IBOutlet weak var beforeCalcTableView: UITableView!
     @IBOutlet weak var beforeCalcAllDeleteBtn: UIButton!
-    
 
-    let model = CalcModel.model
+    let model = CalcViewModel.model
     
     override func viewDidLoad() {
         super.viewDidLoad()
