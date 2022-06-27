@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
-protocol CalcData {
-    func setNumberBtnData(sender: UIButton) -> String
-    func setDotBtnData() -> String
-    func setResultBtnData() -> String
+protocol CalcOperation {
+    func operation(_ operation: Operation)
+    func setDisplayNumber(isCalcBefore: Bool)
+    func changeDataType()
+    func setResultText()
 }
 
 protocol StorageData {
@@ -20,8 +21,8 @@ protocol StorageData {
     func deleteBeforeCalc()
 }
 
-protocol CalcOperation {
-    func operation(_ operation: Operation)
-    func setDisplayNumber(isCalcBefore: Bool)
-    func changeDataType()
+protocol CalcData {
+    func setNumberBtnData(sender: UIButton) -> String
+    func setDotBtnData() -> String
+    func setResultBtnData() -> String
 }
