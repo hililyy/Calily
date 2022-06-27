@@ -20,7 +20,7 @@ class CalcVC: UIViewController {
     @IBOutlet weak var beforeCalcTableView: UITableView!
     @IBOutlet weak var beforeCalcAllDeleteBtn: UIButton!
 
-    let model = CalcViewModel.model
+    let model = CalcViewModel.viewModel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,12 +81,12 @@ extension CalcVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.beforeCalcList.count
+        return model.getBeforeCalcCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = beforeCalcTableView.dequeueReusableCell(withIdentifier: "beforeCalcCell", for: indexPath) as! BeforeCalcTableViewCell
-        cell.cellText.text = "\(model.beforeCalcList[indexPath.row].formula) = \(model.beforeCalcList[indexPath.row].result)"
+        cell.cellText.text = "\(model.getBeforeCalcData()[indexPath.row].formula) = \(model.getBeforeCalcData()[indexPath.row].result)"
         return cell
     }
 }
