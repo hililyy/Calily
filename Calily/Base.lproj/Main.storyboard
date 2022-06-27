@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -408,19 +409,78 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="T3J-sT-Pb8">
+                                <rect key="frame" x="20" y="64" width="291" height="85"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="beforeCalcCell" id="sJM-Y8-WBS" customClass="BeforeCalcTableViewCell" customModule="Calily" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="291" height="39"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sJM-Y8-WBS" id="uuG-Aw-kZd">
+                                            <rect key="frame" x="0.0" y="0.0" width="291" height="39"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnZ-84-PYX">
+                                                    <rect key="frame" x="26" y="11" width="249" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bnZ-84-PYX" firstAttribute="leading" secondItem="uuG-Aw-kZd" secondAttribute="leadingMargin" constant="10" id="0ij-qx-Rdf"/>
+                                                <constraint firstItem="bnZ-84-PYX" firstAttribute="centerY" secondItem="uuG-Aw-kZd" secondAttribute="centerY" id="CC3-a8-dTa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bnZ-84-PYX" secondAttribute="bottom" id="JOj-1c-1FF"/>
+                                                <constraint firstItem="bnZ-84-PYX" firstAttribute="top" secondItem="uuG-Aw-kZd" secondAttribute="topMargin" id="flu-47-RAz"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bnZ-84-PYX" secondAttribute="trailing" id="wfw-96-PiM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellText" destination="bnZ-84-PYX" id="0TO-BS-hwA"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZyM-PF-Htk">
+                                <rect key="frame" x="316" y="94" width="78" height="45"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="40"/>
+                                <color key="tintColor" red="0.092892266809999999" green="0.51808518169999995" blue="0.51478290559999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="AC">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <buttonConfiguration key="configuration" style="tinted" title="전체삭제" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="Hoengseong-Hanu" family="Hoengseong Hanu" pointSize="15"/>
+                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.092892266809999999" green="0.51808518169999995" blue="0.51478290559999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="deleteBeforeCalc:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iia-bC-ltR"/>
+                                    <action selector="touchClearBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NlZ-OW-DTQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eeO-8S-n11" secondAttribute="trailing" constant="30" id="CWM-I8-SuP"/>
+                            <constraint firstItem="T3J-sT-Pb8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="DcJ-mp-mrx"/>
+                            <constraint firstItem="eeO-8S-n11" firstAttribute="top" secondItem="ZyM-PF-Htk" secondAttribute="bottom" constant="40" id="MeY-DV-cL6"/>
                             <constraint firstItem="eeO-8S-n11" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Qdm-TE-2i5"/>
                             <constraint firstItem="NkO-Tz-sN6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="R4A-ZQ-NrN"/>
+                            <constraint firstItem="T3J-sT-Pb8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SJv-rZ-bAD"/>
                             <constraint firstItem="eeO-8S-n11" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="135" id="TBs-xa-nVM"/>
+                            <constraint firstItem="eeO-8S-n11" firstAttribute="top" secondItem="T3J-sT-Pb8" secondAttribute="bottom" constant="30" id="YBt-RK-Qs8"/>
+                            <constraint firstItem="ZyM-PF-Htk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="bFX-ja-z2h"/>
+                            <constraint firstItem="ZyM-PF-Htk" firstAttribute="leading" secondItem="T3J-sT-Pb8" secondAttribute="trailing" constant="5" id="dgO-eg-Tu5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZyM-PF-Htk" secondAttribute="trailing" constant="20" id="lTp-GD-jtG"/>
                             <constraint firstItem="NkO-Tz-sN6" firstAttribute="top" secondItem="eeO-8S-n11" secondAttribute="bottom" constant="55" id="pus-YA-yRF"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="acBtn" destination="jBi-ch-aNP" id="dui-YW-btR"/>
+                        <outlet property="beforeCalcAllDeleteBtn" destination="ZyM-PF-Htk" id="sLU-fX-mbG"/>
+                        <outlet property="beforeCalcTableView" destination="T3J-sT-Pb8" id="zGX-aI-tlr"/>
                         <outlet property="divisionBtn" destination="5t0-V1-5I4" id="MI5-gF-dOp"/>
                         <outlet property="dotBtn" destination="pRg-sr-Klv" id="XPd-yd-aku"/>
                         <outlet property="minusBtn" destination="OUh-f7-MOb" id="Zkc-1f-zeu"/>
@@ -432,8 +492,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181" y="84"/>
+            <point key="canvasLocation" x="-181.15942028985509" y="83.705357142857139"/>
         </scene>
     </scenes>
     <color key="tintColor" red="0.092892266809940338" green="0.51808518171310425" blue="0.51478290557861328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -9,5 +9,5 @@ import Foundation
 
 struct CalcEntity: Codable {
     let formula: String
-    let reslut: String
+    let result: String
 }
