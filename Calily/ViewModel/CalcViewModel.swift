@@ -42,7 +42,7 @@ extension CalcViewModel: CalcOperation {
                 changeDataType()
                 formatResultText()
                 
-                self.setBeforeCalc(formula: formula, result: result)
+                self.setAllBeforeCalcList(formula: formula, result: result)
                 
                 self.firstOperand = self.result
             }

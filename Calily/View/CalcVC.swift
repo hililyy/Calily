@@ -31,7 +31,7 @@ class CalcVC: UIViewController {
         beforeCalcTableView.delegate = self
         beforeCalcTableView.dataSource = self
         resultLabel.text = "0"
-        model.getBeforeCalc()
+        model.getAllBeforeCalcList()
     }
 
     @IBAction func touchNumberBtn(_ sender: UIButton) {
@@ -69,7 +69,7 @@ class CalcVC: UIViewController {
     }
     
     @IBAction func deleteBeforeCalc(_ sender: Any) {
-        model.deleteBeforeCalc()
+        model.deleteAllBeforeCalcList()
         beforeCalcTableView.reloadData()
     }
 }
