@@ -11,6 +11,7 @@ import UIKit
 class CalcViewModel {
     let model = CalcModel.model
     static let viewModel = CalcViewModel()
+    
     var operatorFlag: Bool = false
     var displayNumber: String = ""
     var firstOperand = ""
@@ -20,6 +21,7 @@ class CalcViewModel {
     var currentOpertaion: Operation = .unknown
     var firstOperandData: Int = 0
     var secondOperandData: Int = 0
+    
     private init() {}
     
     func dataInitialize() {
@@ -30,15 +32,18 @@ class CalcViewModel {
         self.currentOpertaion = .unknown
     }
 }
+
 extension CalcViewModel: CalcOperation {
     func operation(_ operation: Operation) {
         if self.currentOpertaion != .unknown {
             if !self.displayNumber.isEmpty {
+                
                 setDisplayNumber(isCalcBefore: true)
                 changeDataType()
-                setResultText()
+                formatResultText()
+                
                 self.setBeforeCalc(formula: formula, result: result)
-            
+                
                 self.firstOperand = self.result
             }
             self.currentOpertaion = operation
@@ -72,7 +77,7 @@ extension CalcViewModel: CalcOperation {
         }
     }
     
-    func setResultText() {
+    func formatResultText() {
         guard let firstOperand = Double(self.firstOperand) else { return }
         guard let secondOperand = Double(self.secondOperand) else { return }
         
@@ -100,16 +105,16 @@ extension CalcViewModel: CalcOperation {
 }
 
 extension CalcViewModel: StorageData {
-    func setBeforeCalc(formula: String, result: String) {
-        model.setBeforeCalc(formula: formula, result: result)
+    func setAllBeforeCalcList(formula: String, result: String) {
+        model.setAllBeforeCalcList(formula: formula, result: result)
     }
 
-    func getBeforeCalc() {
-        model.getBeforeCalc()
+    func getAllBeforeCalcList() {
+        model.getAllBeforeCalcList()
     }
 
-    func deleteBeforeCalc() {
-        model.deleteBeforeCalc()
+    func deleteAllBeforeCalcList() {
+        model.deleteAllBeforeCalcList()
     }
     
     func getBeforeCalcCount() -> Int {
@@ -123,16 +128,13 @@ extension CalcViewModel: StorageData {
 
 extension CalcViewModel: CalcData {
     func setNumberBtnData(sender: UIButton) -> String {
-        guard let numberValue = sender.titleLabel?.text else { return ""}
-        if self.displayNumber.count < 9 {
+        guard let numberValue = sender.titleLabel?.text else { return "" }
             self.displayNumber += numberValue
             return self.displayNumber
-        }
-        return ""
     }
     
     func setDotBtnData() -> String {
-        if self.displayNumber.count < 8, !self.displayNumber.contains(".") {
+        if !self.displayNumber.contains(".") {
             self.displayNumber += self.displayNumber.isEmpty ? "0." : "."
             return self.displayNumber
         }

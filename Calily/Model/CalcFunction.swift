@@ -12,13 +12,13 @@ protocol CalcOperation {
     func operation(_ operation: Operation)
     func setDisplayNumber(isCalcBefore: Bool)
     func changeDataType()
-    func setResultText()
+    func formatResultText()
 }
 
 protocol StorageData {
-    func setBeforeCalc(formula: String, result: String)
-    func getBeforeCalc()
-    func deleteBeforeCalc()
+    func setAllBeforeCalcList(formula: String, result: String)
+    func getAllBeforeCalcList()
+    func deleteAllBeforeCalcList()
 }
 
 protocol CalcData {
@@ -26,3 +26,5 @@ protocol CalcData {
     func setDotBtnData() -> String
     func setResultBtnData()
 }
+
+

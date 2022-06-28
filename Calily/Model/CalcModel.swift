@@ -14,7 +14,7 @@ class CalcModel {
 }
 
 extension CalcModel: StorageData {
-    func setBeforeCalc(formula: String, result: String) {
+    func setAllBeforeCalcList(formula: String, result: String) {
         
         let newData = CalcEntity(formula: formula, result: result)
         
@@ -22,7 +22,7 @@ extension CalcModel: StorageData {
         LocalDataStore.localDataStore.setData(newData: beforeCalcList)
     }
     
-    func getBeforeCalc() {
+    func getAllBeforeCalcList() {
         if LocalDataStore.localDataStore.getData().count != 0 {
             for count in 0...LocalDataStore.localDataStore.getData().count-1 {
                 let entity = LocalDataStore.localDataStore.getData()[count]
@@ -31,7 +31,7 @@ extension CalcModel: StorageData {
         }
     }
     
-    func deleteBeforeCalc() {
+    func deleteAllBeforeCalcList() {
         beforeCalcList = []
         LocalDataStore.localDataStore.setData(newData: beforeCalcList)
     }

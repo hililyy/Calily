@@ -8,7 +8,7 @@
 import UIKit
 
 class CalcVC: UIViewController {
-
+    
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var acBtn: UIButton!
     @IBOutlet weak var divisionBtn: UIButton!
@@ -72,7 +72,6 @@ class CalcVC: UIViewController {
         model.deleteBeforeCalc()
         beforeCalcTableView.reloadData()
     }
-
 }
 
 extension CalcVC: UITableViewDelegate, UITableViewDataSource {
